@@ -1,19 +1,42 @@
 {
   "name": "react-a11y-disclosure",
   "version": "0.1.0",
-  "description": "A small React hook to build accessible disclosure widgets.",
-  "main": "index.js",
+  "description": "A small React hook to build accessible disclosure widgets",
+  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "keywords": [
+    "disclosure",
+    "accessibility",
+    "a11y",
+    "visibility",
+    "react",
+    "component"
+  ],
+  "author": "Kitty Giraudel (https://hugogiraudel.com)",
+  "files": [
+    "dist/index.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npm run build",
+    "start": "babel index.js -o dist/index.js -w",
+    "build": "babel index.js -o dist/index.js",
+    "test": "npm run peer && jest",
+    "peer": "npm info . peerDependencies --json  | command sed 's/[\\{\\},]//g ; s/: /@/g' | xargs npm i --no-save"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HugoGiraudel/react-a11y-disclosure.git"
+    "url": "https://github.com/HugoGiraudel/react-a11y-disclosure/"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HugoGiraudel/react-a11y-disclosure/issues"
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "jest": "^26.6.3"
   },
-  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure#readme"
+  "peerDependencies": {
+    "react": ">=16.0.0"
+  }
 }
