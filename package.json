@@ -1,6 +1,7 @@
 {
   "name": "react-a11y-disclosure",
   "version": "0.1.0",
+  "description": "A small React hook to build accessible disclosure widgets.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +15,5 @@
   "bugs": {
     "url": "https://github.com/HugoGiraudel/react-a11y-disclosure/issues"
   },
-  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure#readme",
-  "description": ""
+  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure#readme"
 }
