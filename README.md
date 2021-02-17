@@ -10,6 +10,7 @@
   - [Connected disclosures](#connected-disclosures)
 - [Styling](#styling)
 - [Non-button toggles](#non-button-toggles)
+- [Demo (Code Sandbox) ↗](https://codesandbox.io/s/react-a11y-disclosure-6l7pj)
 
 ## Install
 
@@ -186,11 +187,20 @@ For animation purposes, the CSS could be authored as such:
   max-height: 10em;
 }
 
+/**
+ * 1. `visibility: hidden` is very important in case `display: none` is not 
+ *    specified, as this is what removes the content from the accessibility tree
+ *    and therefore prevents focusable children from being focused while the 
+ *    widget is collapsed.
+ */
 .disclosure[aria-hidden='true'] {
   max-height: 0;
   opacity: 0;
+  visibility: hidden; /* 1 */
 }
 ```
+
+Whatever CSS solution you come up with, **make sure the content is removed from the accessibility tree while collapsed** so focusable children cannot be focused while the widget is collapsed. This can be done with `display: none`, `visibility: hidden` or the `hidden` HTML attribute.
 
 ## Non-button toggles
 
