@@ -1,0 +1,19 @@
+{
+  "name": "react-a11y-disclosure",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoGiraudel/react-a11y-disclosure.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HugoGiraudel/react-a11y-disclosure/issues"
+  },
+  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure#readme",
+  "description": ""
+}
