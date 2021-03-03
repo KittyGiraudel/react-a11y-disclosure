@@ -2,7 +2,7 @@
   "name": "react-a11y-disclosure",
   "version": "0.1.0",
   "description": "A small React hook to build accessible disclosure widgets",
-  "homepage": "https://github.com/HugoGiraudel/react-a11y-disclosure",
+  "homepage": "https://github.com/KittyGiraudel/react-a11y-disclosure",
   "license": "MIT",
   "main": "dist/index.js",
   "keywords": [
@@ -13,7 +13,7 @@
     "react",
     "component"
   ],
-  "author": "Kitty Giraudel (https://hugogiraudel.com)",
+  "author": "Kitty Giraudel (https://kittygiraudel.com)",
   "files": [
     "dist/index.js"
   ],
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HugoGiraudel/react-a11y-disclosure/"
+    "url": "https://github.com/KittyGiraudel/react-a11y-disclosure/"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.16",
