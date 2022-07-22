@@ -21,8 +21,7 @@
     "prepare": "npm run build",
     "start": "babel index.js -o dist/index.js -w",
     "build": "babel index.js -o dist/index.js",
-    "test": "npm run peer && jest",
-    "peer": "npm info . peerDependencies --json  | command sed 's/[\\{\\},]//g ; s/: /@/g' | xargs npm i --no-save"
+    "test": "npm install react --no-save && jest"
   },
   "repository": {
     "type": "git",
