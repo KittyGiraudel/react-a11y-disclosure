@@ -61,7 +61,15 @@ const SimpleDisclosure = () => {
 
   return (
     <>
-      <button {...toggleProps}>{isExpanded ? 'Collapse' : 'Expand'}</button>
+      {/**
+       * ⚠️ Because the toggle receives the `aria-expanded` attribute as part of
+       * `toggleProps`, its content should not vary between states, as this is
+       * already implied by the presence of this attribute. So the button label
+       * should be explicit about the action, but not changing like “Open” /
+       * “Close” or “Show” / “Hide”.
+       * See: https://twitter.com/goetsu/status/1370729035156779014
+       */}
+      <button {...toggleProps}>Toggle {isExpanded ? '↑' : '↓'}</button>
 
       <div className="disclosure" {...contentProps}>
         …
@@ -99,7 +107,7 @@ const ControlledDisclosure = () => {
   return (
     <>
       <button {...toggleProps} onClick={() => setIsExpanded(value => !value)}>
-        {isExpanded ? 'Collapse' : 'Expand'}
+        Toggle {isExpanded ? '↑' : '↓'}
       </button>
       <div className="disclosure" {...contentProps}>
         …
@@ -116,18 +124,12 @@ Connected toggles are disclosure widgets whose state depend on the state of othe
 ```jsx
 const ConnectedToggles = () => {
   const [isExpanded, setIsExpanded] = React.useState(null)
-  const {
-    toggleProps: togglePropsA,
-    contentProps: contentPropsA,
-  } = useDisclosure({ id: 'A', isExpanded: isExpanded === 'A' })
-  const {
-    toggleProps: togglePropsB,
-    contentProps: contentPropsB,
-  } = useDisclosure({ id: 'B', isExpanded: isExpanded === 'B' })
-  const {
-    toggleProps: togglePropsC,
-    contentProps: contentPropsC,
-  } = useDisclosure({ id: 'C', isExpanded: isExpanded === 'C' })
+  const { toggleProps: togglePropsA, contentProps: contentPropsA } =
+    useDisclosure({ id: 'A', isExpanded: isExpanded === 'A' })
+  const { toggleProps: togglePropsB, contentProps: contentPropsB } =
+    useDisclosure({ id: 'B', isExpanded: isExpanded === 'B' })
+  const { toggleProps: togglePropsC, contentProps: contentPropsC } =
+    useDisclosure({ id: 'C', isExpanded: isExpanded === 'C' })
 
   return (
     <>
@@ -208,7 +210,7 @@ The best element for the toggle definitely is a `<button>` but in some cases, it
 
 ```jsx
 <span {...toggleProps} role="button" tabIndex={0} type={undefined}>
-  {isExpanded ? 'Collapse' : 'Expand'}
+  Toggle {isExpanded ? '↑' : '↓'}
 </span>
 ```
 
