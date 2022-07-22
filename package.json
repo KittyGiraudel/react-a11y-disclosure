@@ -1,6 +1,6 @@
 {
   "name": "react-a11y-disclosure",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A small React hook to build accessible disclosure widgets",
   "homepage": "https://github.com/KittyGiraudel/react-a11y-disclosure",
   "license": "MIT",
