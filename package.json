@@ -19,8 +19,8 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "start": "babel index.js -o dist/index.js -w",
-    "build": "babel index.js -o dist/index.js",
+    "start": "babel src/index.js -o dist/index.js -w",
+    "build": "babel src/index.js -o dist/index.js",
     "test": "npm install react --no-save && jest"
   },
   "repository": {
