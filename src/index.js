@@ -1,18 +1,15 @@
 import React from 'react'
 
-const useDisclosure = (props) => {
+const useDisclosure = props => {
   const [isExpanded, setIsExpanded] = React.useState(
     typeof props.isExpanded !== 'undefined' ? props.isExpanded : true
   )
 
-  React.useEffect(
-    () =>
-      typeof props.isExpanded !== 'undefined' &&
-      setIsExpanded(props.isExpanded),
-    [props.isExpanded]
-  )
+  React.useEffect(() => {
+    typeof props.isExpanded !== 'undefined' && setIsExpanded(props.isExpanded)
+  }, [props.isExpanded])
 
-  const toggle = React.useCallback(() => setIsExpanded((v) => !v), [])
+  const toggle = React.useCallback(() => setIsExpanded(v => !v), [])
 
   const toggleProps = {
     id: props.id + '-toggle',
