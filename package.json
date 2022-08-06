@@ -21,7 +21,7 @@
     "prepare": "npm run build",
     "start": "babel src/index.js -o dist/index.js -w",
     "build": "babel src/index.js -o dist/index.js",
-    "test": "npm install react --no-save && jest"
+    "test": "npm install react --no-save && jest --test-environment=jsdom"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,9 @@
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "jest": "^26.6.3"
+    "@testing-library/react": "^13.3.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
